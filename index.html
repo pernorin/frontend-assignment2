@@ -8,18 +8,43 @@
 		<title>ToDo</title>
 	</head>
 	<body>
-		<form>
-			<label for="todo">Add todo:</label>
-			<input type="text" id="todo" name="todo" />
-			<label for="due-date">Done by:</label>
-			<input type="date" name="due-date" id="due-date" value="2022-12-09" />
-			<label for="category">Category:</label>
-			<select name="category" id="category">
-				<option value="work">Work</option>
-				<option value="home">Home</option>
-				<option value="">XXX</option>
-			</select>
-		</form>
+		<div>
+			<form id="todo-form">
+				<label for="todo">Add todo:</label>
+				<input type="text" id="todo" name="todo" autocomplete="off" />
+				<label for="due_date">Done by:</label>
+				<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date -->
+				<input type="date" name="due_date" id="due_date" />
+				<label for="category">Category:</label>
+				<select name="category" id="category">
+					<option value="work">Work</option>
+					<option value="home">Home</option>
+					<option value="social">Social</option>
+				</select>
+
+				<button type="submit">Add Todo</button>
+			</form>
+			<form id="filter-todos">
+				<fieldset>
+					<legend>Category:</legend>
+					<input type="radio" id="all" value="all" name="search_category" checked />
+					<label for="all">All</label>
+					<input type="radio" id="work" value="work" name="search_category" />
+					<label for="work">Work</label>
+					<input type="radio" id="home" value="home" name="search_category" />
+					<label for="home">Home</label>
+					<input type="radio" id="social" value="social" name="search_category" />
+					<label for="social">Social</label>
+				</fieldset>
+				<label for="search">Search todo</label>
+				<input type="search" id="search" autocomplete="off" />
+				<!--Funkar även: <input type="search" id="search" autocomplete="off" onkeyup="filterTodos(search) eller: (this)" /> -->
+			</form>
+		</div>
+
+		<div>
+			<ul id="todo-list"></ul>
+		</div>
 
 		<script src="script.js"></script>
 	</body>
