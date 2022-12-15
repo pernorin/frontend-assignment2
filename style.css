@@ -2,3 +2,6 @@
 .hideCategory {
 	display: none;
 }
+.overdue .todo-date {
+	background-color: yellow;
+}
