@@ -188,7 +188,7 @@ function filterTodos(term) {
 	diff.forEach((el) => el.classList.add('hide'));
 	filteredList.forEach((el) => el.classList.remove('hide'));
 
-	//console.log('diff:', diff);
+	console.log('diff:', diff);
 	//console.log('fl:', filteredList);
 	//console.log('tlr:', todoListReference);
 }

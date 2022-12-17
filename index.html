@@ -4,16 +4,25 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@500;600;900&display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="style.css" />
 		<title>ToDo</title>
 	</head>
 	<body>
-		<div>
-			<form id="todo-form">
-				<label for="todo">Add todo:</label>
+		<header>
+			<h1>TODO</h1>
+		</header>
+
+		<form id="todo-form" class="container">
+			<div class="form-box">
+				<label for="todo">New todo:</label>
 				<input type="text" id="todo" name="todo" autocomplete="off" />
-				<label for="due_date">Done by:</label>
-				<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date -->
+				<label for="due_date">Done:</label>
 				<input type="date" name="due_date" id="due_date" />
 				<label for="category">Category:</label>
 				<select name="category" id="category">
@@ -21,29 +30,39 @@
 					<option value="home">Home</option>
 					<option value="social">Social</option>
 				</select>
+			</div>
+			<button type="submit">Add</button>
+		</form>
 
-				<button type="submit">Add Todo</button>
-			</form>
-			<form id="filter-todos">
-				<fieldset>
-					<legend>Category:</legend>
-					<input type="radio" id="all" value="all" name="search_category" checked />
-					<label for="all">All</label>
-					<input type="radio" id="work" value="work" name="search_category" />
-					<label for="work">Work</label>
-					<input type="radio" id="home" value="home" name="search_category" />
-					<label for="home">Home</label>
-					<input type="radio" id="social" value="social" name="search_category" />
-					<label for="social">Social</label>
-				</fieldset>
-				<label for="search">Search todo</label>
-				<input type="search" id="search" autocomplete="off" />
-				<!--Funkar även: <input type="search" id="search" autocomplete="off" onkeyup="filterTodos(search) eller: (this)" /> -->
-			</form>
-		</div>
+		<form id="filter-todos" class="container">
+			<label for="search">Find todo:</label>
+			<input type="search" id="search" autocomplete="off" />
+			<fieldset>
+				<legend>Category:</legend>
+				<input type="radio" id="all" value="all" name="search_category" checked />
+				<label for="all">All</label>
+				<input type="radio" id="work" value="work" name="search_category" />
+				<label for="work">Work</label>
+				<input type="radio" id="home" value="home" name="search_category" />
+				<label for="home">Home</label>
+				<input type="radio" id="social" value="social" name="search_category" />
+				<label for="social">Social</label>
+			</fieldset>
+		</form>
 
 		<div>
-			<ul id="todo-list"></ul>
+			<ul id="todo-list" class="container">
+				<!-- 
+      <div class="todo-div">
+        <li>
+          <span class="todo-text">${res.todo}</span>
+          <span class="todo-date">${res.due_date}</span>
+          <span class="todo-category">${res.category}</span>
+        </li>        
+        <button class="remove-btn">Remove</button>
+      </div>  
+      -->
+			</ul>
 		</div>
 
 		<script src="script.js"></script>

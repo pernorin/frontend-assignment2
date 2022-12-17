@@ -1,7 +1,143 @@
+:root {
+	--bg-color: hsl(184, 100%, 34%);
+	--dark: hsl(201, 100%, 12%);
+	--bright: hsl(19, 100%, 50%);
+	--strong: hsl(0, 100%, 22%);
+	--strong-lighter: hsl(0, 100%, 32%);
+	--white: hsl(201, 0%, 90%);
+	--black: hsl(201, 0%, 10%);
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Kumbh Sans', sans-serif;
+}
+body {
+	color: var(--black);
+	background-color: var(--bg-color);
+}
+
+.overdue .todo-date {
+	width: fit-content;
+	background-color: #ff9e0d;
+	font-weight: 600;
+}
+.overdue .todo-date::after {
+	font-size: 0.75rem;
+	content: ' overdue';
+}
+.container {
+	width: 80%;
+	margin: 2rem auto;
+}
+@media only screen and (max-width: 900px) {
+	.container {
+		width: 100%;
+	}
+}
+
+header {
+	text-align: center;
+	padding: 4rem;
+	font-size: 2rem;
+	background-color: var(--dark);
+	color: var(--white);
+}
+button {
+	border: none;
+	background-color: var(--strong);
+	color: var(--white);
+}
+button:hover,
+button:focus {
+	background-color: var(--strong-lighter);
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+button:not(:hover) {
+	transition: 0.2s ease-in-out;
+}
+input,
+select {
+	background-color: var(--white);
+	color: var(--black);
+	border: none;
+}
+
+/* Add form: */
+#todo-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.form-box {
+	display: flex;
+	justify-content: center;
+}
+.form-box label {
+	margin: 0.25rem 1rem;
+}
+.form-box input,
+.form-box select {
+	padding: 0.25rem;
+}
+#todo-form button {
+	font-size: 1.5rem;
+	width: fit-content;
+	padding: 0.75rem 1.5rem;
+	margin: 2rem;
+	font-weight: 600;
+}
+/* filter: */
+#filter-todos {
+	display: flex;
+	justify-content: center;
+}
+#filter-todos input {
+	padding: 0.25rem;
+}
+#filter-todos > label {
+	margin: 0.25rem 1rem;
+}
+#filter-todos fieldset {
+	border: none;
+	padding: 0.25rem;
+}
+#filter-todos legend {
+	float: left;
+	margin-left: 1rem;
+}
+#filter-todos input[type='radio'] {
+	margin-left: 1rem;
+}
+/* Todo-list */
+#todo-list {
+	padding-top: 2rem;
+}
+.todo-div {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 1rem auto;
+	max-width: 920px;
+}
+.todo-div li {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	width: 70%;
+	border-bottom: 1px solid;
+}
+.todo-div li span {
+	padding: 0.5rem;
+}
+.remove-btn {
+	padding: 0.5rem;
+}
+/* MÅSTE LIGGA SIST!: */
 .hide,
 .hideCategory {
 	display: none;
-}
-.overdue .todo-date {
-	background-color: yellow;
 }
