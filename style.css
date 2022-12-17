@@ -1,7 +1,7 @@
 :root {
 	--bg-color: hsl(184, 100%, 34%);
 	--dark: hsl(201, 100%, 12%);
-	--bright: hsl(19, 100%, 50%);
+	--bright: hsl(36, 100%, 53%);
 	--strong: hsl(0, 100%, 22%);
 	--strong-lighter: hsl(0, 100%, 32%);
 	--white: hsl(201, 0%, 90%);
@@ -127,7 +127,7 @@ select {
 }
 .overdue .todo-date {
 	width: fit-content;
-	background-color: #ff9e0d;
+	background-color: var(--bright);
 	font-weight: 600;
 }
 .overdue .todo-date::after {
