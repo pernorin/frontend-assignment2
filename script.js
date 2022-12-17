@@ -2,11 +2,7 @@ const todoInput = document.querySelector('#todo');
 const dateInput = document.querySelector('#due_date');
 const todoForm = document.querySelector('#todo-form');
 const todoList = document.querySelector('#todo-list');
-//const search = document.querySelector('#search');
-//const todoDivs = document.querySelectorAll('.todo-div');
 const filter = document.querySelector('#filter-todos');
-
-//filter.addEventListener('input', (e) => console.log('val:', e.target.value));
 
 let todos = [];
 
@@ -50,13 +46,10 @@ dateInput.min = today;
 	});
 })(today);
 
-/* https://www.youtube.com/watch?v=EnWqnyUZ65Y */
-
 todoForm.addEventListener('submit', addTodo);
 todoList.addEventListener('click', deleteTodo);
 
 filter.addEventListener('input', (e) => {
-	//console.log(e.target);
 	let term = e.target.value.trim().toLowerCase();
 	switch (term) {
 		case 'all':
@@ -76,18 +69,11 @@ filter.addEventListener('input', (e) => {
 	}
 });
 
-/* 
-filter object array
-https://www.youtube.com/watch?v=tcNRdIqDnjY&t=170s
-*/
-
 function addTodo(event) {
 	event.preventDefault();
 
 	const formData = new FormData(todoForm);
 	const res = Object.fromEntries(formData);
-
-	//res.completed = false;
 
 	if (res.todo.trim() !== '') buildTodo(res);
 
@@ -138,14 +124,11 @@ function buildTodo(res) {
 
 	todoList.appendChild(todoDiv);
 
-	res.div = todoDiv; //lägger till referens till div:en i res
-	//från lektion, 1:47 + 1:55 vid1
+	res.div = todoDiv;
 
 	todoListReference.push(todoDiv);
-	//console.log('tlr:', todoListReference);
 
 	todos.push(res);
-	//console.log('todos:', todos);
 }
 
 function deleteTodo(e) {
@@ -153,16 +136,11 @@ function deleteTodo(e) {
 	const todoEl = item.parentElement;
 
 	if (item.className === 'remove-btn') {
-		//item.parentElement.remove();
-
 		const index = todoListReference.findIndex((todoRef) => todoRef === todoEl);
 
 		todoListReference.splice(index, 1);
 		todos.splice(index, 1);
-		//console.log('todos:', todos);
 		todoEl.remove();
-		//console.log(todoEl);
-		//console.log(todoListReference);
 	}
 }
 
@@ -189,9 +167,4 @@ function filterTodos(term) {
 	filteredList.forEach((el) => el.classList.remove('hide'));
 
 	console.log('diff:', diff);
-	//console.log('fl:', filteredList);
-	//console.log('tlr:', todoListReference);
 }
-
-//vid1 13/12 1:50 - filtrera med filter()
-//vid1 13/12 2:10 - mer filter

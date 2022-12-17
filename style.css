@@ -7,7 +7,6 @@
 	--white: hsl(201, 0%, 90%);
 	--black: hsl(201, 0%, 10%);
 }
-
 *,
 *::before,
 *::after {
@@ -16,19 +15,10 @@
 	box-sizing: border-box;
 	font-family: 'Kumbh Sans', sans-serif;
 }
+/* Global: */
 body {
 	color: var(--black);
 	background-color: var(--bg-color);
-}
-
-.overdue .todo-date {
-	width: fit-content;
-	background-color: #ff9e0d;
-	font-weight: 600;
-}
-.overdue .todo-date::after {
-	font-size: 0.75rem;
-	content: ' overdue';
 }
 .container {
 	width: 80%;
@@ -39,7 +29,6 @@ body {
 		width: 100%;
 	}
 }
-
 header {
 	text-align: center;
 	padding: 4rem;
@@ -92,7 +81,7 @@ select {
 	margin: 2rem;
 	font-weight: 600;
 }
-/* filter: */
+/* Filter: */
 #filter-todos {
 	display: flex;
 	justify-content: center;
@@ -136,7 +125,15 @@ select {
 .remove-btn {
 	padding: 0.5rem;
 }
-/* MÅSTE LIGGA SIST!: */
+.overdue .todo-date {
+	width: fit-content;
+	background-color: #ff9e0d;
+	font-weight: 600;
+}
+.overdue .todo-date::after {
+	font-size: 0.75rem;
+	content: ' overdue';
+}
 .hide,
 .hideCategory {
 	display: none;
